@@ -11,6 +11,7 @@ set -ouex pipefail
 
 # this installs a package from fedora repos
 dnf5 install -y tmux 
+dnf5 remove -y tailscale
 
 # Use a COPR Example:
 #
@@ -19,8 +20,8 @@ dnf5 install -y tmux
 # Disable COPRs so they don't end up enabled on the final image:
 # dnf5 -y copr disable ublue-os/staging
 
-dnf5 config-manager addrepo --from-repofile=https://downloads.k8slens.dev/rpm/lens.repo
-dnf5 install -y lens
+# dnf5 config-manager addrepo --from-repofile=https://downloads.k8slens.dev/rpm/lens.repo
+# dnf5 install -y lens
 
 #### Example for enabling a System Unit File
 
